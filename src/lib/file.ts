@@ -54,7 +54,11 @@ class File {
    */
   async touch2(fileNameAbsolutePath: fs.PathLike, content: string) {
     if (!content) log(chalk.red('内容为空'))
-    fs.writeFileSync(fileNameAbsolutePath, content)
+    try {
+      fs.writeFileSync(fileNameAbsolutePath, content)
+    }catch (e){
+      console.log(e.message,'error happen')
+    }
   }
 
   /**

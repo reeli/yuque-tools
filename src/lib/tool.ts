@@ -262,7 +262,7 @@ export const delayedDownloadDoc = async (bookList: any[]) => {
       process.exit(0)
     }
 
-    const { pslug, user, url, title, fullPath } = flatList[index]
+    const { pslug, user, url, title, fullPath } = flatList[index] || {};
 
     const repos = [user, pslug, url].join('/')
     spinner.text = `正在导出[${title}-${repos}]`

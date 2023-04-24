@@ -24,7 +24,8 @@ export const get = <T>(url: string): Promise<{ data: T }> => {
         resolve(res.data)
       })
       .catch((error) => {
-        reject(error)
+        console.log(error.message, 'error')
+        // reject(error)
       })
   })
 }

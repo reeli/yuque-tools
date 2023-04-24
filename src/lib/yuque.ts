@@ -49,7 +49,7 @@ export const getBookStacks = async () => {
     const list = data.reduce((prev: any, curr: { books: any }) => {
       return prev.books.concat(curr.books)
     }) as unknown as TBookItem[]
-    const _list = list.map((item: TBookItem) => {
+    const _list = ((list as any).books).map((item: TBookItem) => {
       return {
         slug: item.slug,
         name: item.name,
